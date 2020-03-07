@@ -1,0 +1,11 @@
+{
+  "name": "books-eshop",
+  "version": "0.0.1",
+  "description": "Book shop application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Paulius Zilinskas",
+  "license": "ISC"
+}
