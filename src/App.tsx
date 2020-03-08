@@ -6,9 +6,11 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 
 import AppMenu from './components/menu/appMenu'
-import HomePage from "./pages/homePage";
-import LoginPage from "./pages/loginPage";
+import HomePage from "./pages/homePage/homePage";
+import LoginPage from "./pages/loginPage/loginPage";
 import AdminPage from "./pages/adminPages/adminPage/adminPage";
+import OrderPage from "./pages/orderPage/orderPage";
+import UserOrdersPage from "./pages/userOrdersPage/userOrdersPage";
 const useStyles = makeStyles(theme => ({
     root: {
         flexGrow: 1,
@@ -31,6 +33,12 @@ export default function CenteredGrid() {
                         </Route>
                         <Route path="/admin">
                             <AdminPage />
+                        </Route>
+                        <Route path="/order">
+                            <OrderPage />
+                        </Route>
+                        <Route path="/my-orders">
+                            <UserOrdersPage />
                         </Route>
                     </Switch>
                 </Router>
