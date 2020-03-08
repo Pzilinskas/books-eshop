@@ -36,6 +36,10 @@ export default function Book() {
                 <Button size="small" color="primary">
                     Add to cart
                 </Button>
+                <Button size="small" color="primary">
+                   Edit
+
+                </Button>
             </CardActions>
         </Card>
     );

@@ -6,5 +6,6 @@ const common = require('./webpack.common.js');
       devtool: 'inline-source-map',
       devServer: {
         contentBase: './dist',
+          historyApiFallback: true
         },
  });
