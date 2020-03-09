@@ -7,13 +7,15 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import TableCell from "@material-ui/core/TableCell";
+import TableRow from "@material-ui/core/TableRow";
 
 const useStyles = makeStyles({
     root: {
     },
 });
 
-export default function Book() {
+export default function Book(props) {
     const classes = useStyles();
 
     return (
@@ -23,13 +25,20 @@ export default function Book() {
                     component="img"
                     alt="Contemplative Reptile"
                     height="450"
-                    image="https://www.cprogramming.com/books/cover_with_border_jumping_into_C++.jpg"
+                    image={props.book.bookCover}
                     title="Contemplative Reptile"
                 />
                 <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                        Book Title
+                    <Typography gutterBottom variant="h6" component="h6">
+                        {props.book.title}
                     </Typography>
+                    <Typography gutterBottom variant="p" component="p">
+                        {props.book.author}
+                    </Typography>
+                    <Typography gutterBottom variant="p" component="p">
+                        Published: {props.book.publishedDate}
+                    </Typography>
+
                 </CardContent>
             </CardActionArea>
             <CardActions>

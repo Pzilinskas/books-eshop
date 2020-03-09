@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "5e64fe10d7d3f4cb8a62712a",
+    "name": "Adminstratorius",
+    "surname": "Pavardenis",
+    "username": "admin",
+    "password": "admin",
+    "role": "admin"
+  },
+  {
+    "_id": "5e64fe10a345b2bf7128e3cb",
+    "name": "Pirkejas",
+    "surname": "Pavardenis",
+    "username": "pirkejas",
+    "password": "pirkejas",
+    "role": "client"
+  }
+]

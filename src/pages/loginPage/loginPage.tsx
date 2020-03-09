@@ -46,8 +46,21 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-export default function LoginPage() {
+
+
+export default function LoginPage(props) {
     const classes = useStyles();
+
+    function handleSubmit(event) {
+        event.preventDefault();
+        props.history.push('/admin');
+        console.log( 'Email:', email, 'Password: ', password);
+        // You should see email and password in console.
+        // ..code to submit form to backend here...
+
+    }
+
+
 
     return (
         <Container component="main" maxWidth="xs">
@@ -59,7 +72,7 @@ export default function LoginPage() {
                 <Typography component="h1" variant="h5">
                     Sign in
                 </Typography>
-                <form className={classes.form} noValidate>
+                <form className={classes.form} onSubmit={handleSubmit} noValidate>
                     <TextField
                         variant="outlined"
                         margin="normal"

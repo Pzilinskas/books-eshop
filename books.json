@@ -1,0 +1,50 @@
+[
+  {
+    "_id": "5e650b9ec77237b7845b06b3",
+    "title": "JavaScript: The Good Parts",
+    "author": "Douglas Crockford",
+    "publishedDate": "December 2008",
+    "bookCover": "https://covers.oreillystatic.com/images/9780596517748/lrg.jpg",
+    "quantity": 5
+  },
+  {
+    "_id": "5e650b9ef5c13c96ad6954ed",
+    "title": "Deploying to OpenShift",
+    "author": "Graham Dumpleton",
+    "publishedDate": "May 2018",
+    "bookCover": "https://covers.oreillystatic.com/images/0636920050728/lrg.jpg",
+    "quantity": 2
+  },
+  {
+    "_id": "5e650b9e281bba73d7f498ea",
+    "title": "Feature Engineering for Machine Learning",
+    "author": "Alice Zheng, Amanda Casari",
+    "publishedDate": "April 2018",
+    "bookCover": "https://covers.oreillystatic.com/images/0636920049081/lrg.jpg",
+    "quantity": 0
+  },
+  {
+    "_id": "5e650b9e140585f19f072737",
+    "title": "Learning Swift, 3rd Edition",
+    "author": "Paris Buttfield-Addison, Jonathon Manning, Tim Nugent",
+    "publishedDate": "April 2018",
+    "bookCover": "https://covers.oreillystatic.com/images/0636920083566/lrg.jpg",
+    "quantity": 3
+  },
+  {
+    "_id": "5e650b9e866d608a4469e44d",
+    "title": "Simplifying JavaScript",
+    "author": "Joe Morgan",
+    "publishedDate": "April 2018",
+    "bookCover": "https://covers.oreillystatic.com/images/9781680502886/lrg.jpg",
+    "quantity": 8
+  },
+    {
+      "_id": "5e650b9e866d608a4469e44d",
+      "title": "Designing Distributed Systems",
+      "author": "Brendan Burns",
+      "publishedDate": "February 2018",
+      "bookCover": "https://covers.oreillystatic.com/images/0636920072768/lrg.jpg",
+      "quantity": 8
+    }
+]

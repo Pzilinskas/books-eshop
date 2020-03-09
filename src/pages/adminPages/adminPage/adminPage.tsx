@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
@@ -11,23 +11,34 @@ import BooksPage from "../booksPage/booksPage";
 import OrdersPage from "../ordersPage/ordersPage";
 import UsersPage from "../usersPage/usersPage";
 
-import List from "../../../components/list/list";
+
+interface Props {
+    onGetUsersStart: () => void;
+}
+
 const useStyles = makeStyles({
     root: {
        // width: 500,
     },
 });
 
-export default function AdminPage() {
+
+export default function AdminPage(props) {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
 
+    useEffect(() => {
+        props.onGetUsersStart;
+        }, []
+    );
     return (
         <div>
             <Switch>
-                <Route path="/admin/books" component={BooksPage}></Route>
-                <Route path="/admin/users" component={UsersPage}></Route>
-                <Route path="/admin/orders" component={OrdersPage}></Route>
+                <Route path="/admin/books" component={BooksPage} />
+                <Route path="/admin/users" render={(match) =>
+                    <UsersPage match={match}/>
+                }  />
+                <Route path="/admin/orders" component={OrdersPage} />
             </Switch>
             <BottomNavigation
                 value={value}

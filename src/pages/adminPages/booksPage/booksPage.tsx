@@ -1,4 +1,4 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -7,6 +7,12 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import Box from '@material-ui/core/Box';
+
+
+import { useDispatch, useSelector } from "react-redux";
+
+import {fetchBooks} from "../../../redux/thunks";
 
 const useStyles = makeStyles({
     table: {
@@ -14,44 +20,43 @@ const useStyles = makeStyles({
     },
 });
 
-function createData(name: string, calories: number, fat: number, carbs: number, protein: number) {
-    return { name, calories, fat, carbs, protein };
-}
-
-
-const rows = [
-    createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-    createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-    createData('Eclair', 262, 16.0, 24, 6.0),
-    createData('Cupcake', 305, 3.7, 67, 4.3),
-    createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
 
 export default function BooksPage() {
     const classes = useStyles();
+    const books = useSelector((state) => state.books.books);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(fetchBooks())
+    }, []);
 
     return (
         <TableContainer component={Paper}>
+            <Box textAlign="center">
+                <h2>Books</h2>
+            </Box>
             <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        <TableCell>Dessert (100g serving)</TableCell>
-                        <TableCell align="right">Calories</TableCell>
-                        <TableCell align="right">Fat&nbsp;(g)</TableCell>
-                        <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-                        <TableCell align="right">Protein&nbsp;(g)</TableCell>
+                        <TableCell align="center">Id</TableCell>
+                        <TableCell align="center">Title</TableCell>
+                        <TableCell align="center">Author</TableCell>
+                        <TableCell align="center">Publish Date</TableCell>
+                        <TableCell align="center">Book Cover</TableCell>
+                        <TableCell align="center">Quantity</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    {rows.map(row => (
-                        <TableRow key={row.name}>
+                    {books && books.map(book => (
+                        <TableRow key={book._id}>
                             <TableCell component="th" scope="row">
-                                {row.name}
+                                {book._id}
                             </TableCell>
-                            <TableCell align="right">{row.calories}</TableCell>
-                            <TableCell align="right">{row.fat}</TableCell>
-                            <TableCell align="right">{row.carbs}</TableCell>
-                            <TableCell align="right">{row.protein}</TableCell>
+                            <TableCell align="right">{book.title}</TableCell>
+                            <TableCell align="right">{book.author}</TableCell>
+                            <TableCell align="right">{book.publishedDate}</TableCell>
+                            <TableCell align="right">{book.bookCover}</TableCell>
+                            <TableCell align="right">{book.quantity}</TableCell>
                         </TableRow>
                     ))}
                 </TableBody>

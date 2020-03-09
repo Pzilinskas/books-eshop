@@ -1,0 +1,24 @@
+export const GET_USERS = "GET_USERS";
+export const GET_ORDERS = "GET_ORDERS";
+
+
+
+export const GET_USERS_SUCCESS = "GET_USERS_SUCCESS";
+export const GET_ORDERS_SUCCESS = "GET_ORDERS_SUCCESS";
+export const GET_BOOKS_SUCCESS = "GET_BOOKS_SUCCESS";
+
+export const EDIT_BOOK = "EDIT_BOOK";
+export const CREATE_BOOK = "CREATE_BOOK";
+export const DELETE_BOOK = "DELETE_BOOK";
+
+export const EDIT_BOOK_SUCCESS = "EDIT_BOOK_SUCCESS";
+export const CREATE_BOOK_SUCCESS = "CREATE_BOOK_SUCCESS";
+export const DELETE_BOOK_SUCCESS = "DELETE_BOOK_SUCCESS";
+
+export const UPDATE_ORDER_STATUS = "UPDATE_ORDER_STATUS";
+export const UPDATE_ORDER_STATUS_SUCCESS = "UPDATE_ORDER_STATUS_SUCCESS";
+
+interface GetUsers {
+    type: typeof GET_USERS;
+    payload: users
+}
