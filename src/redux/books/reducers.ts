@@ -1,10 +1,12 @@
 import {
-    GET_BOOKS
+    GET_BOOKS,
+    GET_BOOK
 } from "./types";
 import {BaseAction} from '../types';
 
 const initialState: BooksState = {
-    books: []
+    books: [],
+    selectedBook: []
 };
 
 export function booksReducer(
@@ -16,6 +18,11 @@ export function booksReducer(
             return {
                 ...state,
                 books:  action.payload
+            };
+        case GET_BOOK:
+            return {
+                ...state,
+                selectedBook:  action.payload
             };
         default:
             return state;

@@ -1,4 +1,4 @@
-import React,  { useState, useEffect } from 'react';
+import React,  { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
@@ -10,6 +10,8 @@ import { Switch, Route, Link } from 'react-router-dom';
 import BooksPage from "../booksPage/booksPage";
 import OrdersPage from "../ordersPage/ordersPage";
 import UsersPage from "../usersPage/usersPage";
+import AddBook from "../booksPage/addBook/addBook";
+import EditBook from "../booksPage/editBook/editBook";
 
 
 interface Props {
@@ -34,11 +36,14 @@ export default function AdminPage(props) {
     return (
         <div>
             <Switch>
+                <Route path="/admin/books/edit/:id" render={(props) => <EditBook {...props} />}/>
+                <Route path="/admin/books/add" component={AddBook} />
                 <Route path="/admin/books" component={BooksPage} />
                 <Route path="/admin/users" render={(match) =>
                     <UsersPage match={match}/>
                 }  />
                 <Route path="/admin/orders" component={OrdersPage} />
+
             </Switch>
             <BottomNavigation
                 value={value}
@@ -57,6 +62,7 @@ export default function AdminPage(props) {
                 <Link to="/admin/books">
                     <BottomNavigationAction label="Books" icon={<MenuBookIcon />} />
                 </Link>
+
             </BottomNavigation>
             </div>
     );

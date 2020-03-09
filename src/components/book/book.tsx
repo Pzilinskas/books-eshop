@@ -7,13 +7,13 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import TableCell from "@material-ui/core/TableCell";
-import TableRow from "@material-ui/core/TableRow";
+import {Link} from 'react-router';
 
 const useStyles = makeStyles({
     root: {
     },
 });
+
 
 export default function Book(props) {
     const classes = useStyles();
@@ -32,10 +32,10 @@ export default function Book(props) {
                     <Typography gutterBottom variant="h6" component="h6">
                         {props.book.title}
                     </Typography>
-                    <Typography gutterBottom variant="p" component="p">
+                    <Typography gutterBottom variant="body1" component="body1">
                         {props.book.author}
                     </Typography>
-                    <Typography gutterBottom variant="p" component="p">
+                    <Typography gutterBottom variant="body1" component="body1">
                         Published: {props.book.publishedDate}
                     </Typography>
 
@@ -46,8 +46,7 @@ export default function Book(props) {
                     Add to cart
                 </Button>
                 <Button size="small" color="primary">
-                   Edit
-
+                    Edit
                 </Button>
             </CardActions>
         </Card>

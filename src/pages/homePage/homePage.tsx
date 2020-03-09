@@ -26,7 +26,7 @@ export default function HomePage() {
         <div className={classes.root}>
             <Grid container spacing={2}>
                 { books && books.map(bookItem => (
-                    <Grid item xs={12} sm={6} md={4}>
+                    <Grid item xs={12} sm={6} md={4} key={bookItem._id}>
                         <Book book={bookItem} />
                     </Grid>
                 ))}

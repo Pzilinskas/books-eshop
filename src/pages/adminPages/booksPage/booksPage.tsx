@@ -8,12 +8,12 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Box from '@material-ui/core/Box';
-
-
+import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
+import { Link as RouterLink } from 'react-router-dom';
 
 import {fetchBooks} from "../../../redux/thunks";
-
 const useStyles = makeStyles({
     table: {
         minWidth: 650,
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
 });
 
 
-export default function BooksPage() {
+export default function BooksPage(props) {
     const classes = useStyles();
     const books = useSelector((state) => state.books.books);
     const dispatch = useDispatch();
@@ -35,6 +35,11 @@ export default function BooksPage() {
             <Box textAlign="center">
                 <h2>Books</h2>
             </Box>
+            <Button variant="contained" color="primary">
+                <Link to="/admin/books/add">
+                    Add Book
+                </Link>
+            </Button>
             <Table className={classes.table} aria-label="simple table">
                 <TableHead>
                     <TableRow>
@@ -57,6 +62,16 @@ export default function BooksPage() {
                             <TableCell align="right">{book.publishedDate}</TableCell>
                             <TableCell align="right">{book.bookCover}</TableCell>
                             <TableCell align="right">{book.quantity}</TableCell>
+                            <TableCell align="right">
+                                <Button variant="contained" color="secondary">
+                                    Delete
+                                </Button>
+                            </TableCell>
+                            <TableCell align="right">
+                                <Button variant="contained" color="secondary" component={RouterLink} to={`/admin/books/edit/${book._id}`}>
+                                    Edit
+                                </Button>
+                            </TableCell>
                         </TableRow>
                     ))}
                 </TableBody>
