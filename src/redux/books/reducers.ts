@@ -1,12 +1,12 @@
 import {
-    GET_BOOKS,
-    GET_BOOK
+    GET_BOOKS_SUCCESS,
+    GET_BOOK,
 } from "./types";
 import {BaseAction} from '../types';
 
 const initialState: BooksState = {
     books: [],
-    selectedBook: []
+    selectedBook: ''
 };
 
 export function booksReducer(
@@ -14,9 +14,10 @@ export function booksReducer(
     action: BaseAction
 ): BooksState {
     switch (action.type) {
-        case GET_BOOKS:
+        case GET_BOOKS_SUCCESS:
             return {
                 ...state,
+                selectedBook: '',
                 books:  action.payload
             };
         case GET_BOOK:
